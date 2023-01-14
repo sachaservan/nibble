@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+  "name": "nibble",
+  "version": "1.0",
+
+  "description": "Pay for your browsing!",
+  "homepage_url": "http://getnibble.net",
+  "icons": {
+    "48": "icons/nibble-48.png"
+  },
+
+  "background": {
+    "scripts": ["bg-script.js"],
+    "persistent": true
+  },
+
+  "permissions": [
+    "storage",
+    "unlimitedStorage",
+    "activeTab",
+    "tabs",
+    "webRequest"],
+
+  "browser_action": {
+    "default_icon": "icons/nibble-32.png",
+    "default_title": "nibble",
+    "default_popup": "popup/index.html"
+  }
+}
