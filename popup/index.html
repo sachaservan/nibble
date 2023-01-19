@@ -3,21 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="slider.css" />
     <script src="popup.js"></script>
   </head>
 
   <body>
-    <div id="logo">
+    <div id="logo-header">
+      <div id="logo"></div>
+    </div>
+    <div class="space"></div>
+    <div id="enable-header">
+      <table>
+      <tr>
+        <td>
+        <p id="enable-paragraph">Enabled on <a id="current-tab-link"></a></p>
+      </td>
+      <td>
+        <label class="switch">
+          <input id="enabled-checkbox" type="checkbox" checked>
+          <span class="slider round"></span>
+        </label>
+      </td>
+    </tr>
+    </table>
     </div>
     <div id="balance-header">
     </div>
     <div id="recent-content">
-      <h3>Latest nibbles</h3>
+      <u><h3>Latest nibbles</h3></u>
       <table id="recent-table">
       </table>
     </div>
     <div id="top-content">
-      <h3>Top nibbles</h3>
+      <u><h3>Top nibbles</h3></u>
       <table id="top-table">
       </table>
     </div>

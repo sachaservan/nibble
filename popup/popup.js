@@ -1,9 +1,31 @@
+function onSwitchChanged(switchElem) {
+  if (switchElem.checked) {
+  } else {
+  }
+}
+
 document.addEventListener("DOMContentLoaded", (e) => {
   browser.storage.local.get("balance").then((currentBalance) => {
     balance = JSON.parse(currentBalance.balance);
+
+    let checkbox = document.getElementById("enabled-checkbox");
+    checkbox.addEventListener("change", onSwitchChanged, false);
+
+    browser.tabs.query({ currentWindow: true, active: true }).then((tabs) => {
+      let tab = tabs[0];
+      console.log(tab);
+      let url = tab.url;
+      const a = document.querySelector("#current-tab-link");
+      website = getWebsiteName(url);
+      const websiteTxt = document.createTextNode(website);
+      a.href = website;
+      a.appendChild(websiteTxt);
+      a.target = "_blank";
+    });
+
     const header = document.querySelector("#balance-header");
 
-    header.innerHTML = `You've nibbled on ${balance} website`;
+    header.innerHTML = `You've nibbled ${balance} time`;
     if (balance > 1) {
       header.innerHTML += "s";
     }
