@@ -1,9 +1,21 @@
 html,
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  width: 350px;
-  background-color: #dafff6;
+  font-family:Arial, Helvetica, sans-serif;
+  width: 400px;
+  background-color: #aaf0d1;;
+  /* background-color: #dafff6; */
 
+}
+
+h3 {
+  color: #333;
+}
+
+a  {
+  color:dodgerblue;
+}
+a:visited {
+  color:dodgerblue;
 }
 
 .hidden {
@@ -12,6 +24,7 @@ body {
 table {
   border-collapse: collapse;
   width: 100%;
+
 }
 
 th, td {
@@ -19,15 +32,15 @@ th, td {
   padding: 4pt;
 }
 
-td:nth-child(even)  {
+td:nth-child(even) {
   font-weight: bold;
   text-align: right;
 }
 
-tr:nth-child(odd) {
+/* tr:nth-child(even) {
   background-color: #ebfeff;
   border-radius: 5pt;
-}
+} */
 
 
 #logo {
@@ -37,19 +50,32 @@ tr:nth-child(odd) {
   background-size: cover;
 }
 
+
+
 #balance-header {
   color:#222;
   padding: 8pt;
-  background-color: #aaf0d1;
+  background-color:  #dafff6;
   border-radius: 5pt;
   font-size: 12pt;
   font-weight: bold;
   margin-top: 16pt;
 }
 
-#popup-content {
-  background-color: #d6feff;
+#recent-content {
+  background-color:  #dafff6;
   color: #222;
   padding: 8pt;
   border-radius: 5pt;
+  border-width: 1pt;
+  border-color: cadetblue;
+  margin-top: 16pt;
+}
+
+#top-content {
+  background-color:  #dafff6;
+  color: #222;
+  padding: 8pt;
+  border-radius: 5pt;
+  margin-top: 16pt;
 }

@@ -57,7 +57,6 @@ function updateBalance() {
 
 function updateBaseCount(url) {
   let key = getBaseURL(url);
-  console.log(key);
   browser.storage.local.get(key).then(
     (website) => {
       if (isEmpty(website)) {
@@ -71,6 +70,32 @@ function updateBaseCount(url) {
           [key]: { count: website[key].count + 1, isBase: true },
         });
         console.log("Current count: " + website[key].count);
+      }
+    },
+    (error) => {
+      console.error(error);
+    }
+  );
+
+  // update recent website list
+  let recent = "recent";
+  browser.storage.local.get(recent).then(
+    (websiteList) => {
+      if (isEmpty(websiteList)) {
+        websiteList = [];
+        websiteList.push(key);
+        browser.storage.local.set({
+          [recent]: { websiteList },
+        });
+      } else {
+        websiteList = websiteList.recent.websiteList;
+        websiteList.push(key);
+        if (websiteList.length > 5) {
+          websiteList.shift(); // removes the first element in the array
+        }
+        browser.storage.local.set({
+          [recent]: { websiteList },
+        });
       }
     },
     (error) => {
